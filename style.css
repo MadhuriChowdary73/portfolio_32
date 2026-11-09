@@ -9,38 +9,53 @@
    ----------------------------------------------------------------- */
 :root {
   /* ── Base palette: white, black, dark brown & grey ── */
-  --bg:        #FFFFFF;
-  --black:     #111111;
-  --white:     #FFFFFF;
+  --bg: #FFFFFF;
+  --black: #111111;
+  --white: #FFFFFF;
 
   /* ── Grey Scale ── */
-  --grey-50:   #F7F7F7;
-  --grey-100:  #EBEBEB;
-  --grey-200:  #D6D6D6;
-  --grey-300:  #B5B5B5;
-  --grey-500:  #757575;
-  --grey-700:  #424242;
+  --grey-50: #F7F7F7;
+  --grey-100: #EBEBEB;
+  --grey-200: #D6D6D6;
+  --grey-300: #B5B5B5;
+  --grey-500: #757575;
+  --grey-700: #424242;
 
   /* ── Dark Brown & Charcoal Accents ── */
-  --dark-brown:      #2A1D17;   /* deep espresso dark brown */
-  --dark-brown-mid:  #3D2B22;   /* rich dark mocha */
-  --dark-brown-soft: #523B30;   /* roasted chestnut */
-  --grey-charcoal:   #2C3539;   /* deep slate grey */
-  --grey-graphite:   #3E3E3E;   /* deep graphite grey */
+  --dark-brown: #272625;
+  /* deep espresso dark brown */
+  --dark-brown-mid: #3D2B22;
+  /* rich dark mocha */
+  --dark-brown-soft: #523B30;
+  /* roasted chestnut */
+  --grey-charcoal: #2C3539;
+  /* deep slate grey */
+  --grey-graphite: #3E3E3E;
+  /* deep graphite grey */
 
   /* ── Card Accent Variables (Dark Brown & Deep Grey) ── */
-  --yellow:    #2A1D17;   /* espresso dark brown */
-  --pink:      #3D2B22;   /* dark mocha brown */
-  --blue:      #2C3539;   /* charcoal slate grey */
-  --mint:      #3E3E3E;   /* graphite grey */
-  --orange:    #523B30;   /* roasted chestnut dark brown */
+  --yellow: #2A1D17;
+  /* espresso dark brown */
+  --pink: #3D2B22;
+  /* dark mocha brown */
+  --blue: #2C3539;
+  /* charcoal slate grey */
+  --mint: #3E3E3E;
+  /* graphite grey */
+  --orange: #523B30;
+  /* roasted chestnut dark brown */
 
   /* ── Hover Tints: Sophisticated Warm Stone & Cool Greys ── */
-  --yellow-pastel: #EAE6E1;  /* warm stone grey */
-  --pink-pastel:   #E7E2DD;  /* soft mocha-tinted grey */
-  --blue-pastel:   #E9ECEF;  /* cool slate grey */
-  --mint-pastel:   #ECECEC;  /* balanced neutral grey */
-  --orange-pastel: #EAE4DF;  /* warm pebble grey */
+  --yellow-pastel: #EAE6E1;
+  /* warm stone grey */
+  --pink-pastel: #E7E2DD;
+  /* soft mocha-tinted grey */
+  --blue-pastel: #E9ECEF;
+  /* cool slate grey */
+  --mint-pastel: #ECECEC;
+  /* balanced neutral grey */
+  --orange-pastel: #EAE4DF;
+  /* warm pebble grey */
 
   /* Typography */
   --font-heading: 'Space Grotesk', sans-serif;
@@ -632,24 +647,52 @@ button {
   transition: background 0.3s;
 }
 
-.highlight-yellow { background: var(--grey-100); }
-.highlight-pink   { background: var(--grey-100); }
-.highlight-blue   { background: var(--grey-100); }
-.highlight-mint   { background: var(--grey-100); }
-.highlight-orange { background: var(--grey-100); }
+.highlight-yellow {
+  background: var(--grey-100);
+}
+
+.highlight-pink {
+  background: var(--grey-100);
+}
+
+.highlight-blue {
+  background: var(--grey-100);
+}
+
+.highlight-mint {
+  background: var(--grey-100);
+}
+
+.highlight-orange {
+  background: var(--grey-100);
+}
 
 /* When a card is hovered or highlight itself is hovered, reveal the warm beige/brown accent */
 .highlight:hover,
 .highlight-yellow:hover,
-.about-grid:hover .highlight-yellow { background: var(--yellow-pastel); }
+.about-grid:hover .highlight-yellow {
+  background: var(--yellow-pastel);
+}
+
 .highlight-pink:hover,
-.about-grid:hover .highlight-pink   { background: var(--pink-pastel); }
+.about-grid:hover .highlight-pink {
+  background: var(--pink-pastel);
+}
+
 .highlight-blue:hover,
-.about-grid:hover .highlight-blue   { background: var(--blue-pastel); }
+.about-grid:hover .highlight-blue {
+  background: var(--blue-pastel);
+}
+
 .highlight-mint:hover,
-.about-grid:hover .highlight-mint   { background: var(--mint-pastel); }
+.about-grid:hover .highlight-mint {
+  background: var(--mint-pastel);
+}
+
 .highlight-orange:hover,
-.about-grid:hover .highlight-orange { background: var(--orange-pastel); }
+.about-grid:hover .highlight-orange {
+  background: var(--orange-pastel);
+}
 
 /* -----------------------------------------------------------------
    10. MARQUEE STRIP
@@ -924,9 +967,17 @@ button {
 }
 
 /* Accent appears on hover */
-.hackathon-card[style*="--card-accent: var(--orange)"]:hover { background: var(--orange-pastel); }
-.hackathon-card[style*="--card-accent: var(--pink)"]:hover   { background: var(--pink-pastel); }
-.hackathon-card[style*="--card-accent: var(--mint)"]:hover   { background: var(--mint-pastel); }
+.hackathon-card[style*="--card-accent: var(--orange)"]:hover {
+  background: var(--orange-pastel);
+}
+
+.hackathon-card[style*="--card-accent: var(--pink)"]:hover {
+  background: var(--pink-pastel);
+}
+
+.hackathon-card[style*="--card-accent: var(--mint)"]:hover {
+  background: var(--mint-pastel);
+}
 
 .hackathon-emoji {
   font-size: 2rem;
@@ -1037,10 +1088,21 @@ button {
   border-left-color: var(--card-accent, var(--yellow));
 }
 
-.cert-card[style*="--card-accent: var(--orange)"]:hover { background: var(--orange-pastel); }
-.cert-card[style*="--card-accent: var(--blue)"]:hover   { background: var(--blue-pastel); }
-.cert-card[style*="--card-accent: var(--mint)"]:hover   { background: var(--mint-pastel); }
-.cert-card[style*="--card-accent: var(--pink)"]:hover   { background: var(--pink-pastel); }
+.cert-card[style*="--card-accent: var(--orange)"]:hover {
+  background: var(--orange-pastel);
+}
+
+.cert-card[style*="--card-accent: var(--blue)"]:hover {
+  background: var(--blue-pastel);
+}
+
+.cert-card[style*="--card-accent: var(--mint)"]:hover {
+  background: var(--mint-pastel);
+}
+
+.cert-card[style*="--card-accent: var(--pink)"]:hover {
+  background: var(--pink-pastel);
+}
 
 .cert-icon {
   font-size: 1.6rem;
