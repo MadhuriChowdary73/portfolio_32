@@ -8,22 +8,39 @@
    0. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ----------------------------------------------------------------- */
 :root {
-  /* Palette */
-  --bg: #FFF8E7;
-  --black: #000000;
-  --white: #FFFFFF;
-  --yellow: #f8ec7f;
-  --pink: #FF90E8;
-  --blue: #6C9CFF;
-  --mint: #7CF5B0;
-  --orange: #FF8A3D;
+  /* ── Base palette: white, black, dark brown & grey ── */
+  --bg:        #FFFFFF;
+  --black:     #111111;
+  --white:     #FFFFFF;
 
-  /* Hover-pastel tints (for card hover) */
-  --yellow-pastel: #FFF4C2;
-  --pink-pastel: #FFDCF5;
-  --blue-pastel: #D4E2FF;
-  --mint-pastel: #CCFFE3;
-  --orange-pastel: #FFD9BD;
+  /* ── Grey Scale ── */
+  --grey-50:   #F7F7F7;
+  --grey-100:  #EBEBEB;
+  --grey-200:  #D6D6D6;
+  --grey-300:  #B5B5B5;
+  --grey-500:  #757575;
+  --grey-700:  #424242;
+
+  /* ── Dark Brown & Charcoal Accents ── */
+  --dark-brown:      #2A1D17;   /* deep espresso dark brown */
+  --dark-brown-mid:  #3D2B22;   /* rich dark mocha */
+  --dark-brown-soft: #523B30;   /* roasted chestnut */
+  --grey-charcoal:   #2C3539;   /* deep slate grey */
+  --grey-graphite:   #3E3E3E;   /* deep graphite grey */
+
+  /* ── Card Accent Variables (Dark Brown & Deep Grey) ── */
+  --yellow:    #2A1D17;   /* espresso dark brown */
+  --pink:      #3D2B22;   /* dark mocha brown */
+  --blue:      #2C3539;   /* charcoal slate grey */
+  --mint:      #3E3E3E;   /* graphite grey */
+  --orange:    #523B30;   /* roasted chestnut dark brown */
+
+  /* ── Hover Tints: Sophisticated Warm Stone & Cool Greys ── */
+  --yellow-pastel: #EAE6E1;  /* warm stone grey */
+  --pink-pastel:   #E7E2DD;  /* soft mocha-tinted grey */
+  --blue-pastel:   #E9ECEF;  /* cool slate grey */
+  --mint-pastel:   #ECECEC;  /* balanced neutral grey */
+  --orange-pastel: #EAE4DF;  /* warm pebble grey */
 
   /* Typography */
   --font-heading: 'Space Grotesk', sans-serif;
@@ -68,8 +85,8 @@ body {
   color: var(--black);
   background-color: var(--bg);
   overflow-x: hidden;
-  /* Dot-grid background */
-  background-image: radial-gradient(circle, var(--black) 0.7px, transparent 0.7px);
+  /* Subtle grey dot-grid on white */
+  background-image: radial-gradient(circle, #CCCCCC 0.7px, transparent 0.7px);
   background-size: 28px 28px;
 }
 
@@ -96,13 +113,13 @@ button {
 }
 
 ::selection {
-  background: var(--yellow);
+  background: var(--grey-200);
   color: var(--black);
 }
 
 /* Focus outlines — thick and visible */
 :focus-visible {
-  outline: 3px solid var(--blue);
+  outline: 3px solid var(--grey-300);
   outline-offset: 3px;
 }
 
@@ -157,7 +174,7 @@ button {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 7rem);
-  color: var(--bg);
+  color: var(--white);
   text-transform: uppercase;
   letter-spacing: -0.03em;
   white-space: nowrap;
@@ -179,7 +196,7 @@ button {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(2.5rem, 8vw, 7rem);
-  color: var(--yellow);
+  color: var(--grey-300);
   animation: cursor-blink 0.6s step-end infinite;
   margin-left: 2px;
 }
@@ -193,13 +210,14 @@ button {
 /* -----------------------------------------------------------------
    4. SCROLL PROGRESS BAR
    ----------------------------------------------------------------- */
+/* Scroll progress — grey */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   height: 5px;
   width: var(--progress);
-  background: var(--pink);
+  background: var(--dark-brown);
   z-index: 9999;
   transition: none;
 }
@@ -213,7 +231,7 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--bg);
+  background: var(--white);
   border-bottom: var(--border-w) solid var(--black);
   padding: 0.75rem 0;
   backdrop-filter: blur(4px);
@@ -259,7 +277,7 @@ button {
   bottom: 0;
   width: 0;
   height: 3px;
-  background: var(--yellow);
+  background: var(--dark-brown);
   transition: width 0.3s;
 }
 
@@ -305,7 +323,7 @@ button {
   right: 0;
   width: min(80vw, 320px);
   height: 100vh;
-  background: var(--yellow);
+  background: var(--grey-100);
   border-left: var(--border-w) solid var(--black);
   z-index: 1050;
   display: flex;
@@ -379,18 +397,32 @@ button {
 }
 
 .btn-accent {
-  background: var(--yellow);
+  background: var(--grey-100);
   color: var(--black);
+  border-color: var(--black);
+}
+
+.btn-accent:hover {
+  background: var(--dark-brown);
+  color: var(--white);
 }
 
 .btn-outline {
-  background: var(--bg);
+  background: var(--white);
   color: var(--black);
+}
+
+.btn-outline:hover {
+  background: var(--grey-50);
 }
 
 .btn-black {
   background: var(--black);
-  color: var(--bg);
+  color: var(--white);
+}
+
+.btn-black:hover {
+  background: var(--dark-brown);
 }
 
 .btn-sm {
@@ -464,7 +496,7 @@ button {
   opacity: 0;
   transform: translateY(100%);
   font-weight: 700;
-  color: var(--pink);
+  color: var(--dark-brown);
   transition: opacity 0.4s, transform 0.4s;
 }
 
@@ -503,7 +535,7 @@ button {
 }
 
 .social-link:hover {
-  color: var(--pink);
+  color: var(--dark-brown);
 }
 
 /* Floating sticker decorations */
@@ -543,7 +575,7 @@ button {
 .shape-star {
   top: 0;
   left: 10%;
-  color: var(--yellow);
+  color: var(--grey-300);
   font-size: 2.5rem;
 }
 
@@ -553,7 +585,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 3px solid var(--pink);
+  border: 3px solid var(--grey-300);
 }
 
 .shape-squiggle {
@@ -590,39 +622,41 @@ button {
 
 /* -----------------------------------------------------------------
    9. HIGHLIGHT / MARKER EFFECT
+   Default: grey underline. On hover the parent card adds accent bg.
    ----------------------------------------------------------------- */
 .highlight {
   padding: 0.05em 0.25em;
   position: relative;
   white-space: nowrap;
+  background: var(--grey-100);
+  transition: background 0.3s;
 }
 
-.highlight-yellow {
-  background: var(--yellow);
-}
+.highlight-yellow { background: var(--grey-100); }
+.highlight-pink   { background: var(--grey-100); }
+.highlight-blue   { background: var(--grey-100); }
+.highlight-mint   { background: var(--grey-100); }
+.highlight-orange { background: var(--grey-100); }
 
-.highlight-pink {
-  background: var(--pink);
-}
-
-.highlight-blue {
-  background: var(--blue);
-}
-
-.highlight-mint {
-  background: var(--mint);
-}
-
-.highlight-orange {
-  background: var(--orange);
-}
+/* When a card is hovered or highlight itself is hovered, reveal the warm beige/brown accent */
+.highlight:hover,
+.highlight-yellow:hover,
+.about-grid:hover .highlight-yellow { background: var(--yellow-pastel); }
+.highlight-pink:hover,
+.about-grid:hover .highlight-pink   { background: var(--pink-pastel); }
+.highlight-blue:hover,
+.about-grid:hover .highlight-blue   { background: var(--blue-pastel); }
+.highlight-mint:hover,
+.about-grid:hover .highlight-mint   { background: var(--mint-pastel); }
+.highlight-orange:hover,
+.about-grid:hover .highlight-orange { background: var(--orange-pastel); }
 
 /* -----------------------------------------------------------------
    10. MARQUEE STRIP
    ----------------------------------------------------------------- */
 .marquee-strip {
-  background: var(--black);
-  color: var(--bg);
+  background: var(--dark-brown);
+  color: var(--white);
   border-top: var(--border-w) solid var(--black);
   border-bottom: var(--border-w) solid var(--black);
   padding: 0.9rem 0;
@@ -651,7 +685,7 @@ button {
 }
 
 .marquee-dot {
-  color: var(--yellow);
+  color: var(--grey-300);
 }
 
 @keyframes marquee {
@@ -683,10 +717,17 @@ button {
 .title-number {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  background: var(--yellow);
+  background: var(--grey-100);
+  color: var(--black);
   padding: 0.2rem 0.6rem;
   border: var(--border-w) solid var(--black);
   border-radius: var(--radius);
+  transition: background 0.3s, color 0.3s;
+}
+
+.section:hover .title-number {
+  background: var(--dark-brown);
+  color: var(--white);
 }
 
 .title-arrow {
@@ -702,19 +743,20 @@ button {
 }
 
 .project-card {
-  background: var(--bg);
+  background: var(--white);
   border: var(--border-w) solid var(--black);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   padding: clamp(1.5rem, 3vw, 2.5rem);
   position: relative;
   transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
-  border-left: 8px solid var(--card-accent, var(--yellow));
+  border-left: 8px solid var(--grey-200);
 }
 
 .project-card:hover {
   transform: translate(-4px, -4px);
   box-shadow: var(--shadow-hover);
+  border-left-color: var(--card-accent, var(--yellow));
 }
 
 /* Pastel hover tint */
@@ -742,12 +784,17 @@ button {
   font-family: var(--font-heading);
   font-weight: 800;
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--card-accent, var(--yellow));
+  color: var(--grey-200);
   line-height: 1;
-  opacity: 0.35;
+  opacity: 1;
   position: absolute;
   top: 1rem;
   right: 1.5rem;
+  transition: color 0.3s;
+}
+
+.project-card:hover .project-number {
+  color: var(--card-accent, var(--yellow));
 }
 
 .project-title {
@@ -812,8 +859,15 @@ button {
   padding: 0.3rem 0.7rem;
   border: 2px solid var(--black);
   border-radius: var(--radius);
-  background: var(--bg);
+  background: var(--white);
   box-shadow: 2px 2px 0 var(--black);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.tag:hover {
+  background: var(--dark-brown);
+  color: var(--white);
+  transform: translate(-1px, -1px);
 }
 
 .project-links {
@@ -841,7 +895,7 @@ button {
 }
 
 .badge-wip {
-  background: var(--orange);
+  background: var(--grey-200);
   box-shadow: 2px 2px 0 var(--black);
 }
 
@@ -860,7 +914,7 @@ button {
   border: var(--border-w) solid var(--black);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  background: var(--bg);
+  background: var(--white);
   transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
 }
 
@@ -869,18 +923,10 @@ button {
   box-shadow: var(--shadow-hover);
 }
 
-/* Pastel hover for hackathon cards */
-.hackathon-card[style*="--card-accent: var(--orange)"]:hover {
-  background: var(--orange-pastel);
-}
-
-.hackathon-card[style*="--card-accent: var(--pink)"]:hover {
-  background: var(--pink-pastel);
-}
-
-.hackathon-card[style*="--card-accent: var(--mint)"]:hover {
-  background: var(--mint-pastel);
-}
+/* Accent appears on hover */
+.hackathon-card[style*="--card-accent: var(--orange)"]:hover { background: var(--orange-pastel); }
+.hackathon-card[style*="--card-accent: var(--pink)"]:hover   { background: var(--pink-pastel); }
+.hackathon-card[style*="--card-accent: var(--mint)"]:hover   { background: var(--mint-pastel); }
 
 .hackathon-emoji {
   font-size: 2rem;
@@ -901,7 +947,12 @@ button {
 }
 
 .sticker-card {
-  border-left: 6px solid var(--card-accent, var(--yellow));
+  border-left: 6px solid var(--grey-200);
+  transition: border-left-color 0.3s;
+}
+
+.sticker-card:hover {
+  border-left-color: var(--card-accent, var(--yellow));
 }
 
 /* -----------------------------------------------------------------
@@ -918,7 +969,7 @@ button {
   border: var(--border-w) solid var(--black);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
-  background: var(--bg);
+  background: var(--white);
   transition: background 0.3s;
 }
 
@@ -949,7 +1000,7 @@ button {
   border: 2px solid var(--black);
   border-radius: var(--radius);
   box-shadow: 2px 2px 0 var(--black);
-  background: var(--bg);
+  background: var(--white);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
   cursor: default;
 }
@@ -957,7 +1008,8 @@ button {
 .chip:hover {
   transform: rotate(-3deg) translate(-2px, -2px);
   box-shadow: 4px 4px 0 var(--black);
-  background: var(--mint);
+  background: var(--dark-brown);
+  color: var(--white);
 }
 
 /* -----------------------------------------------------------------
@@ -973,32 +1025,22 @@ button {
   padding: 1.5rem;
   border: var(--border-w) solid var(--black);
   border-radius: var(--radius);
-  border-left: 7px solid var(--card-accent, var(--yellow));
+  border-left: 7px solid var(--grey-200);
   box-shadow: var(--shadow-sm);
-  background: var(--bg);
-  transition: transform 0.25s, box-shadow 0.25s, background 0.3s;
+  background: var(--white);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.3s, border-left-color 0.3s;
 }
 
 .cert-card:hover {
   transform: translate(-4px, -4px);
   box-shadow: var(--shadow-hover);
+  border-left-color: var(--card-accent, var(--yellow));
 }
 
-.cert-card[style*="--card-accent: var(--orange)"]:hover {
-  background: var(--orange-pastel);
-}
-
-.cert-card[style*="--card-accent: var(--blue)"]:hover {
-  background: var(--blue-pastel);
-}
-
-.cert-card[style*="--card-accent: var(--mint)"]:hover {
-  background: var(--mint-pastel);
-}
-
-.cert-card[style*="--card-accent: var(--pink)"]:hover {
-  background: var(--pink-pastel);
-}
+.cert-card[style*="--card-accent: var(--orange)"]:hover { background: var(--orange-pastel); }
+.cert-card[style*="--card-accent: var(--blue)"]:hover   { background: var(--blue-pastel); }
+.cert-card[style*="--card-accent: var(--mint)"]:hover   { background: var(--mint-pastel); }
+.cert-card[style*="--card-accent: var(--pink)"]:hover   { background: var(--pink-pastel); }
 
 .cert-icon {
   font-size: 1.6rem;
@@ -1045,10 +1087,16 @@ button {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   overflow: hidden;
-  background: var(--blue);
+  background: var(--grey-100);
   transform: rotate(-3deg);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   position: relative;
+}
+
+.photo-frame:hover {
+  transform: rotate(0deg);
+  box-shadow: var(--shadow-hover);
+  background: var(--blue-pastel);
 }
 
 .photo-frame::after {
@@ -1060,11 +1108,6 @@ button {
   border-radius: 2px;
   pointer-events: none;
   opacity: 0.35;
-}
-
-.photo-frame:hover {
-  transform: rotate(0deg);
-  box-shadow: var(--shadow-hover);
 }
 
 /* Cutout photo style */
@@ -1102,9 +1145,17 @@ button {
   padding: 0.35rem 0.75rem;
   border: 2px solid var(--black);
   border-radius: var(--radius);
-  background: var(--yellow);
+  background: var(--grey-100);
   box-shadow: 2px 2px 0 var(--black);
   white-space: nowrap;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.sticker-badge:hover,
+.about-photo:hover .sticker-badge {
+  background: var(--dark-brown);
+  color: var(--white);
+  transform: rotate(3deg) scale(1.05);
 }
 
 .about-text p {
@@ -1166,7 +1217,8 @@ button {
   justify-content: center;
   font-weight: 700;
   font-size: 1rem;
-  background: var(--mint);
+  background: var(--dark-brown);
+  color: var(--white);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -1191,7 +1243,7 @@ button {
    ----------------------------------------------------------------- */
 .footer {
   background: var(--black);
-  color: var(--bg);
+  color: var(--white);
   padding: 1.25rem 0;
   border-top: var(--border-w) solid var(--black);
 }
