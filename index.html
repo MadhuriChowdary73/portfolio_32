@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Madhuri Chowdary — Software Developer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Madhuri Chowdary, a B.Tech CSE student building data pipelines, security tools and web apps. Open to internships." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Madhuri Chowdary — Portfolio" />
+  <meta property="og:description" content="CSE student who turns messy data and ideas into working, demo-ready projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://madhurichowdary73.github.io/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- No-JS fallback: make everything visible if JS / GSAP fails -->
+  <noscript>
+    <style>
+      #intro-overlay { display: none !important; }
+      .card-reveal, .slide-in-left { opacity: 1 !important; transform: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- ============================================================
+       INTRO OVERLAY (typing reveal)
+       ============================================================ -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-typing" id="intro-typing"></div>
+    <div class="intro-cursor-blink" id="intro-cursor">|</div>
+  </div>
+
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav id="navbar" aria-label="Primary navigation">
+    <div class="nav-inner container">
+      <a href="#hero" class="nav-logo" aria-label="Home">MC.</a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+
+      <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-sm btn-black magnetic" aria-label="Download resume (PDF)">Resume ↗</a>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile slide-in panel -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener" class="mobile-link">Resume ↗</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section id="hero" class="hero section">
+    <div class="container hero-grid">
+
+      <div class="hero-content">
+        <!-- Headline: each word wrapped for stagger animation -->
+        <h1 class="hero-title" aria-label="Madhuri Chowdary">
+          <span class="word">MADHURI</span>
+          <span class="word">CHOWDARY</span>
+        </h1>
+
+        <!-- Rotating role line -->
+        <div class="hero-role" aria-live="polite">
+          <span class="role-static">I'm a&nbsp;</span>
+          <span class="role-carousel">
+            <span class="role-item active">Software Developer</span>
+            <span class="role-item">Data Analyst</span>
+            <span class="role-item">Builder</span>
+          </span>
+        </div>
+
+        <p class="hero-tagline">CSE student who turns <span class="highlight highlight-yellow">messy data</span> and ideas into <span class="highlight highlight-pink">working, demo-ready</span> projects.</p>
+
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-accent magnetic">
+            <!-- inline arrow SVG -->
+            See my work
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline magnetic">Get in touch</a>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://github.com/MadhuriChowdary73" target="_blank" rel="noopener" class="social-link magnetic" aria-label="GitHub">
+            <!-- GitHub SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/MadhuriChowdary" target="_blank" rel="noopener" class="social-link magnetic" aria-label="LinkedIn">
+            <!-- LinkedIn SVG -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating stickers -->
+      <div class="hero-decor" aria-hidden="true">
+        <div class="sticker sticker-intern">
+          <svg class="sticker-circle-text" viewBox="0 0 200 200" width="140" height="140">
+            <defs>
+              <path id="circlePath" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/>
+            </defs>
+            <text>
+              <textPath href="#circlePath" startOffset="0%">OPEN TO INTERNSHIPS 2027 ★ OPEN TO INTERNSHIPS 2027 ★ </textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="floating-shape shape-star">★</div>
+        <div class="floating-shape shape-circle"></div>
+        <div class="floating-shape shape-squiggle">
+          <svg width="60" height="30" viewBox="0 0 60 30" fill="none" stroke="#FF90E8" stroke-width="4" stroke-linecap="round"><path d="M2 15 C10 2, 20 28, 30 15 C40 2, 50 28, 58 15"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about" class="about section">
+    <div class="container about-grid">
+      <div class="about-photo card-reveal" aria-hidden="true">
+        <div class="photo-frame">
+          <img src="madhuri.jpg" alt="Madhuri Chowdary" class="photo-cutout" width="360" height="440" loading="lazy" />
+        </div>
+        <span class="cgpa-sticker sticker-badge">CGPA 8.67 ★</span>
+      </div>
+      <div class="about-text card-reveal">
+        <h2 class="section-title slide-in-left">
+          <span class="title-number">01</span> About
+        </h2>
+        <p>Third-year <span class="highlight highlight-blue">Computer Science</span> student at Amrita Vishwa Vidyapeetham, Amaravati.</p>
+        <p>I like <span class="highlight highlight-yellow">data</span>, <span class="highlight highlight-pink">security</span>, and building things people can actually try.</p>
+        <p>Looking for a <span class="highlight highlight-mint">software development</span> or <span class="highlight highlight-orange">data analytics</span> internship where I can ship real work.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE STRIP
+       ============================================================ -->
+  <div class="marquee-strip" aria-label="Skills: Python, PySpark, Power BI, Streamlit, Java, SQL, Git">
+    <div class="marquee-track">
+      <span class="marquee-content">
+        <span>Python</span><span class="marquee-dot">★</span>
+        <span>PySpark</span><span class="marquee-dot">★</span>
+        <span>Power BI</span><span class="marquee-dot">★</span>
+        <span>Streamlit</span><span class="marquee-dot">★</span>
+        <span>Java</span><span class="marquee-dot">★</span>
+        <span>SQL</span><span class="marquee-dot">★</span>
+        <span>Git</span><span class="marquee-dot">★</span>
+      </span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-content" aria-hidden="true">
+        <span>Python</span><span class="marquee-dot">★</span>
+        <span>PySpark</span><span class="marquee-dot">★</span>
+        <span>Power BI</span><span class="marquee-dot">★</span>
+        <span>Streamlit</span><span class="marquee-dot">★</span>
+        <span>Java</span><span class="marquee-dot">★</span>
+        <span>SQL</span><span class="marquee-dot">★</span>
+        <span>Git</span><span class="marquee-dot">★</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PROJECTS
+       ============================================================ -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <h2 class="section-title slide-in-left">
+        <span class="title-number">02</span> Selected Projects
+        <svg class="title-arrow" width="40" height="20" viewBox="0 0 40 20" fill="none" stroke="#000" stroke-width="3" stroke-linecap="square" aria-hidden="true"><path d="M0 10H35M25 2L35 10L25 18"/></svg>
+      </h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card card-reveal" style="--card-accent: var(--yellow);" data-tilt>
+          <div class="project-number">01</div>
+          <h3 class="project-title">Job Market Skill Intelligence</h3>
+          <p class="project-pitch">A data pipeline that decodes what employers actually want from entry-level tech hires.</p>
+          <div class="project-details">
+            <div class="detail-row"><span class="detail-label">Problem</span><span class="detail-text">Job seekers struggle to identify which skills matter most across different regions.</span></div>
+            <div class="detail-row"><span class="detail-label">What I built</span><span class="detail-text">A PySpark pipeline cleaning and analyzing 1.3M+ LinkedIn postings across the US, UK, Canada and Australia, visualized through an interactive Power BI dashboard.</span></div>
+            <div class="detail-row"><span class="detail-label">Outcome</span><span class="detail-text">Surfaced clear skill-demand patterns by location, giving students a data-backed way to plan their learning.</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">PySpark</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Python</span>
+            <span class="tag">Google Colab</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline magnetic" aria-label="View Job Market Skill Intelligence on GitHub">GitHub</a>
+            <a href="#" class="btn btn-sm btn-accent magnetic" aria-label="View live demo of Job Market Skill Intelligence">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card card-reveal" style="--card-accent: var(--pink);" data-tilt>
+          <div class="project-number">02</div>
+          <h3 class="project-title">StegaCrypt</h3>
+          <p class="project-pitch">Hide encrypted messages inside images — security meets steganography.</p>
+          <div class="project-details">
+            <div class="detail-row"><span class="detail-label">Problem</span><span class="detail-text">Sending sensitive text securely without raising suspicion is hard with standard encryption alone.</span></div>
+            <div class="detail-row"><span class="detail-label">What I built</span><span class="detail-text">A Streamlit app that encrypts a message with AES, then hides the ciphertext inside a PNG using LSB steganography, with password-protected extraction.</span></div>
+            <div class="detail-row"><span class="detail-label">Outcome</span><span class="detail-text">A working tool that lets anyone encrypt-and-hide a message in a few clicks, all in the browser.</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">AES</span>
+            <span class="tag">LSB</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline magnetic" aria-label="View StegaCrypt on GitHub">GitHub</a>
+            <a href="#" class="btn btn-sm btn-accent magnetic" aria-label="View live demo of StegaCrypt">Live Demo</a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card card-reveal" style="--card-accent: var(--blue);" data-tilt>
+          <span class="badge badge-wip">In Progress</span>
+          <div class="project-number">03</div>
+          <h3 class="project-title">Campus Compass</h3>
+          <p class="project-pitch">Everything a fresher needs to navigate campus, in one place.</p>
+          <div class="project-details">
+            <div class="detail-row"><span class="detail-label">Problem</span><span class="detail-text">New students at Amrita waste time hunting for basic info about clubs, hostels and facilities.</span></div>
+            <div class="detail-row"><span class="detail-label">What I built</span><span class="detail-text">A campus portal that organizes all essential information for Amrita freshers in a single, easy-to-browse site.</span></div>
+            <div class="detail-row"><span class="detail-label">Outcome</span><span class="detail-text">Currently in development — aiming to launch for the next intake.</span></div>
+          </div>
+          <div class="project-tags">
+            <span class="tag">Web</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-sm btn-outline magnetic" aria-label="View Campus Compass on GitHub">GitHub</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HACKATHONS
+       ============================================================ -->
+  <section id="hackathons" class="hackathons section">
+    <div class="container">
+      <h2 class="section-title slide-in-left">
+        <span class="title-number">03</span> Hackathons
+      </h2>
+      <div class="hackathon-grid">
+        <div class="hackathon-card sticker-card card-reveal" style="--card-accent: var(--orange);">
+          <span class="hackathon-emoji">🏆</span>
+          <h3>Top 10 Finalist</h3>
+          <p>FinTech Track — PECHacks 2026</p>
+        </div>
+        <div class="hackathon-card sticker-card card-reveal" style="--card-accent: var(--pink);">
+          <span class="hackathon-emoji">🚀</span>
+          <h3>Shortlisted</h3>
+          <p>Mumbai Hacks Finals 2025 — National Level</p>
+        </div>
+        <div class="hackathon-card sticker-card card-reveal" style="--card-accent: var(--mint);">
+          <span class="hackathon-emoji">⚡</span>
+          <h3>State Level Finalist</h3>
+          <p>OpenAI Academy × NxtWave Buildathon</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SKILLS
+       ============================================================ -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <h2 class="section-title slide-in-left">
+        <span class="title-number">04</span> Skills
+      </h2>
+      <div class="skills-groups">
+        <div class="skill-group card-reveal">
+          <h3 class="skill-group-title">Languages</h3>
+          <div class="chip-wrap">
+            <span class="chip chip-stagger">C</span>
+            <span class="chip chip-stagger">Python</span>
+            <span class="chip chip-stagger">Java</span>
+            <span class="chip chip-stagger">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group card-reveal">
+          <h3 class="skill-group-title">Data</h3>
+          <div class="chip-wrap">
+            <span class="chip chip-stagger">PySpark</span>
+            <span class="chip chip-stagger">Pandas</span>
+            <span class="chip chip-stagger">SQL</span>
+            <span class="chip chip-stagger">Power BI</span>
+          </div>
+        </div>
+        <div class="skill-group card-reveal">
+          <h3 class="skill-group-title">Web & Tools</h3>
+          <div class="chip-wrap">
+            <span class="chip chip-stagger">HTML</span>
+            <span class="chip chip-stagger">CSS</span>
+            <span class="chip chip-stagger">Streamlit</span>
+            <span class="chip chip-stagger">Git</span>
+            <span class="chip chip-stagger">Linux</span>
+          </div>
+        </div>
+        <div class="skill-group card-reveal">
+          <h3 class="skill-group-title">Exploring</h3>
+          <div class="chip-wrap">
+            <span class="chip chip-stagger">Cryptography</span>
+            <span class="chip chip-stagger">Computer Networks</span>
+            <span class="chip chip-stagger">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CERTIFICATIONS
+       ============================================================ -->
+  <section id="certifications" class="certifications section">
+    <div class="container">
+      <h2 class="section-title slide-in-left">
+        <span class="title-number">05</span> Certifications
+      </h2>
+      <div class="cert-grid">
+
+        <div class="cert-card card-reveal" style="--card-accent: var(--orange);">
+          <span class="cert-icon">🎓</span>
+          <h3 class="cert-title">AWS Machine Learning</h3>
+          <p class="cert-issuer">Amazon Web Services</p>
+          <p class="cert-desc">4-course track covering ML essentials, terminology, processes and intro to machine learning.</p>
+        </div>
+
+        <div class="cert-card card-reveal" style="--card-accent: var(--blue);">
+          <span class="cert-icon">💡</span>
+          <h3 class="cert-title">Infosys Springboard</h3>
+          <p class="cert-issuer">Infosys — 15 courses</p>
+          <p class="cert-desc">AI, Deep Learning, NLP, Gen AI, Prompt Engineering, Computer Vision, Data Science, Agile Scrum &amp; RPA.</p>
+        </div>
+
+        <div class="cert-card card-reveal" style="--card-accent: var(--mint);">
+          <span class="cert-icon">🍃</span>
+          <h3 class="cert-title">MongoDB</h3>
+          <p class="cert-issuer">MongoDB University — 11 courses</p>
+          <p class="cert-desc">Complete certification track covering MongoDB fundamentals through advanced operations.</p>
+        </div>
+
+        <div class="cert-card card-reveal" style="--card-accent: var(--pink);">
+          <span class="cert-icon">🔒</span>
+          <h3 class="cert-title">Cybersecurity</h3>
+          <p class="cert-issuer">Deloitte</p>
+          <p class="cert-desc">Cybersecurity fundamentals and practices.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact" class="contact section">
+    <div class="container contact-inner">
+      <h2 class="contact-title card-reveal">LET'S BUILD<br />SOMETHING.</h2>
+
+      <div class="contact-actions card-reveal">
+        <button id="copy-email" class="btn btn-big btn-accent magnetic" aria-label="Copy email address" data-email="madhurichowdary2007@gmail.com">
+          <span class="email-text">madhurichowdary2007@gmail.com</span>
+          <span class="copied-toast" aria-live="polite">Copied!</span>
+        </button>
+
+        <div class="contact-social">
+          <a href="https://github.com/MadhuriChowdary73" target="_blank" rel="noopener" class="btn btn-outline magnetic" aria-label="GitHub profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/MadhuriChowdary" target="_blank" rel="noopener" class="btn btn-outline magnetic" aria-label="LinkedIn profile">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>Designed & built by <strong>Madhuri</strong> ✦</p>
+      <button id="back-to-top" class="btn btn-sm btn-black magnetic" aria-label="Back to top">↑ Top</button>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       DOT GRID BACKGROUND (generated via CSS)
+       ============================================================ -->
+
+  <!-- GSAP + ScrollTrigger CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- App Script -->
+  <script src="script.js"></script>
+</body>
+</html>
+
